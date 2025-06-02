@@ -8,7 +8,7 @@ const VenueBookingsMini = ({ venueId }) => {
   useEffect(() => {
     if (!venueId) return;
     axios
-      .get(`http://localhost:5001/api/bookings/venue/${venueId}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/bookings/venue/${venueId}`)
       .then(res => setBookings(res.data))
       .catch(() => setBookings([]));
   }, [venueId]);

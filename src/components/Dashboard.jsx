@@ -23,7 +23,7 @@ function Dashboard() {
 
   const fetchLocations = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/locations/get");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/locations/get`);
       setLocations(res.data);
     } catch (err) {
       console.error("Failed to fetch locations", err);
@@ -45,7 +45,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5001/api/locations/add",
+        `${process.env.REACT_APP_API_URL}/api/locations/add`,
         {
           location: location.trim(),
           venue: {

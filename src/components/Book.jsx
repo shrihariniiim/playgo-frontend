@@ -10,7 +10,7 @@ const Book = () => {
 
   useEffect(() => {
     // Fetch all locations and flatten all venues
-    axios.get("http://localhost:5001/api/locations/get")
+    axios.get(`${process.env.REACT_APP_API_URL}/api/locations/get`)
       .then(res => {
         // Flatten all venues from all locations
         const venues = res.data.flatMap(loc =>

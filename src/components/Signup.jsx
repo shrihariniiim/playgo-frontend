@@ -21,7 +21,7 @@ function Signup() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:5001/api/auth/register", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
         name: data.name,
         email: data.email,
         password: data.password,
