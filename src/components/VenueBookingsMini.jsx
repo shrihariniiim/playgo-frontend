@@ -8,7 +8,7 @@ const VenueBookingsMini = ({ venueId }) => {
   useEffect(() => {
     if (!venueId) return;
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/bookings/venue/${venueId}`)
+      .get(`https://my-playgo-backend.onrender.com/api/bookings/venue/${venueId}`)
       .then(res => setBookings(res.data))
       .catch(() => setBookings([]));
   }, [venueId]);

@@ -8,7 +8,7 @@
 //       setPlayers([]);
 //       return;
 //     }
-//     fetch(`http://localhost:5001/api/bookings/players?location=${encodeURIComponent(location)}`)
+//     fetch(`http://:5001/api/bookings/players?location=${encodeURIComponent(location)}`)
 //       .then(res => res.json())
 //       .then(data => setPlayers(data));
 //   }, [location, searchTrigger]);
@@ -49,7 +49,7 @@ function BookingList({ location, searchTrigger }) {
       return;
     }
 
-    fetch(`http://localhost:5001/api/bookings/players?location=${encodeURIComponent(location)}`)
+    fetch(`https://my-playgo-backend.onrender.com/api/bookings/players?location=${encodeURIComponent(location)}`)
       .then((res) => res.json())
       .then((data) => setPlayers(data))
       .catch((err) => console.error("Error fetching players:", err));

@@ -10,7 +10,7 @@ const SearchVenue = ({ onSearch }) => {
   const handleSearch = async () => {
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/locations/search?q=${location}`
+        `https://my-playgo-backend.onrender.com/api/locations/search?q=${location}`
       );
       setVenuesData(res.data);
       setError('');

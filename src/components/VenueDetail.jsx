@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,7 +8,7 @@ const VenueDetail = () => {
   const [venue, setVenue] = useState(null);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/locations/get`).then(res => {
+    axios.get("https://my-playgo-backend.onrender.com/api/locations/get").then(res => {
       const allVenues = res.data.flatMap(loc =>
         (loc.venues || []).map(v => ({
           ...v,
