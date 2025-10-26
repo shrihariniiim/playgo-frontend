@@ -27,7 +27,7 @@ const BookingPage = () => {
   // Fetch venue if not passed via state (e.g., on refresh)
   useEffect(() => {
     if (!venue) {
-      axios.get("https://my-playgo-backend.onrender.com/api/locations/get").then(res => {
+      axios.get("https://playgo-backend.onrender.com/api/locations/get").then(res => {
         const allVenues = res.data.flatMap(loc =>
           (loc.venues || []).map(v => ({
             ...v,
@@ -85,7 +85,7 @@ const BookingPage = () => {
   useEffect(() => {
     if (venueId) {
       axios
-        .get(`https://my-playgo-backend.onrender.com/api/bookings/venue/${venueId}`)
+        .get(`https://playgo-backend.onrender.com/api/bookings/venue/${venueId}`)
         .then(res => setVenueBookings(res.data))
         .catch(() => setVenueBookings([]));
     }
@@ -140,7 +140,7 @@ const BookingPage = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "https://my-playgo-backend.onrender.com/api/bookings/create",
+        "https://playgo-backend.onrender.com/api/bookings/create",
         cartItem,
         { headers: { Authorization: `Bearer ${token}` } }
       );

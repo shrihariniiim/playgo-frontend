@@ -1,41 +1,3 @@
-// import React, { useEffect, useState } from "react";
-
-// function BookingList({ location, searchTrigger }) {
-//   const [players, setPlayers] = useState([]);
-
-//   useEffect(() => {
-//     if (!location) {
-//       setPlayers([]);
-//       return;
-//     }
-//     fetch(`http://:5001/api/bookings/players?location=${encodeURIComponent(location)}`)
-//       .then(res => res.json())
-//       .then(data => setPlayers(data));
-//   }, [location, searchTrigger]);
-
-//   return (
-//     <div>
-//       <h2>Players Who Booked in Location</h2>
-//       <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginTop: "16px" }}>
-//         {players.map(player => (
-//           <div key={player._id} style={{
-//             border: "1px solid #ccc",
-//             borderRadius: "8px",
-//             padding: "16px",
-//             width: "250px"
-//           }}>
-//             <h3>{player.name || player.email}</h3>
-//             <p>Email: {player.email}</p>
-//             <p>Role: {player.role}</p>
-//             <p>Karma: {player.karma ?? "N/A"}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default BookingList;
 
 
 import React, { useEffect, useState } from "react";
@@ -49,7 +11,7 @@ function BookingList({ location, searchTrigger }) {
       return;
     }
 
-    fetch(`https://my-playgo-backend.onrender.com/api/bookings/players?location=${encodeURIComponent(location)}`)
+    fetch(`https://playgo-backend.onrender.com/api/bookings/players?location=${encodeURIComponent(location)}`)
       .then((res) => res.json())
       .then((data) => setPlayers(data))
       .catch((err) => console.error("Error fetching players:", err));

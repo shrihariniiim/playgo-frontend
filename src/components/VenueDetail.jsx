@@ -8,7 +8,7 @@ const VenueDetail = () => {
   const [venue, setVenue] = useState(null);
 
   useEffect(() => {
-    axios.get("https://my-playgo-backend.onrender.com/api/locations/get").then(res => {
+    axios.get("https://playgo-backend.onrender.com/api/locations/get").then(res => {
       const allVenues = res.data.flatMap(loc =>
         (loc.venues || []).map(v => ({
           ...v,

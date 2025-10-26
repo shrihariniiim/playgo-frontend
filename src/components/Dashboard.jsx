@@ -23,7 +23,7 @@ function Dashboard() {
 
   const fetchLocations = async () => {
     try {
-      const res = await axios.get("https://my-playgo-backend.onrender.com/api/locations/get");
+      const res = await axios.get("https://playgo-backend.onrender.com/api/locations/get");
       setLocations(res.data);
     } catch (err) {
       console.error("Failed to fetch locations", err);
@@ -45,7 +45,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `https://my-playgo-backend.onrender.com/api/locations/add`,
+        `https://playgo-backend.onrender.com/api/locations/add`,
         {
           location: location.trim(),
           venue: {

@@ -14,7 +14,7 @@ function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("https://my-playgo-backend.onrender.com/api/auth/login", {
+      const res = await axios.post("https://playgo-backend.onrender.com/api/auth/login", {
         email: data.email,
         password: data.password,
       });
